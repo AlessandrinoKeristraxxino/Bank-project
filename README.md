@@ -29,3 +29,5 @@ Una semplice applicazione web stile ATM per simulare operazioni bancarie base di
 - Il saldo iniziale è `€ 1.250,00`.
 - I dati delle operazioni restano salvati nel browser finché non vengono cancellati i dati del sito.
 - L'app è una simulazione frontend, non si collega a un backend bancario reale.
+
+Me and ya 3:
