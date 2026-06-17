@@ -1,4 +1,5 @@
 const title = document.getElementById('title');
+
 const colors = ['red', 'green', 'blue', 'orange', 'purple', 'pink', 'yellow'];
 function updateColorForTitle() {
     setInterval(() => {
