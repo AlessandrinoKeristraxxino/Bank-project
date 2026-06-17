@@ -1,19 +1,100 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bank Site</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>ATM App</title>
         <link type="text/css" rel="stylesheet" href="styles/style.css" />
         <script src="script/script.js" defer></script>
     </head>
     <body>
-        <nav></nav>
+        <main class="app-shell">
+            <section class="hero">
+                <div class="hero-copy">
+                    <p class="eyebrow">ATM App</p>
+                    <h1>Gestisci saldo, prelievi e depositi in modo rapido.</h1>
+                    <p class="hero-text">Un pannello transazioni moderno per simulare una carta, inserire il PIN e controllare ogni movimento.</p>
+                </div>
 
-        <main>
-            <div class="title">
-                <h1 id="title">Sito di Transazioni</h1>
-            </div>
+                <div class="status-card">
+                    <div>
+                        <span class="status-label">Stato carta</span>
+                        <strong id="card-status">Carta non inserita</strong>
+                    </div>
+                    <div>
+                        <span class="status-label">Saldo disponibile</span>
+                        <strong id="balance-value">€ 0,00</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="atm-layout">
+                <article class="atm-panel">
+                    <div class="panel-header">
+                        <div>
+                            <p class="panel-kicker">Controllo accesso</p>
+                            <h2>Inserisci carta e PIN</h2>
+                        </div>
+                        <button id="insert-card-btn" class="ghost-button" type="button">Inserisci carta</button>
+                    </div>
+
+                    <div class="pin-row">
+                        <label for="pin-input">PIN</label>
+                        <div class="pin-input-group">
+                            <input id="pin-input" type="password" inputmode="numeric" maxlength="4" placeholder="1234" />
+                            <button id="unlock-btn" type="button">Sblocca</button>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="quick-btn" data-amount="20" type="button">€20</button>
+                        <button class="quick-btn" data-amount="50" type="button">€50</button>
+                        <button class="quick-btn" data-amount="100" type="button">€100</button>
+                    </div>
+
+                    <div class="transaction-grid">
+                        <label class="field">
+                            <span>Importo</span>
+                            <input id="amount-input" type="number" min="1" step="1" placeholder="Es. 75" />
+                        </label>
+
+                        <div class="action-buttons">
+                            <button id="withdraw-btn" type="button">Preleva</button>
+                            <button id="deposit-btn" type="button">Deposita</button>
+                        </div>
+                    </div>
+
+                    <button id="reset-btn" class="secondary-button" type="button">Blocca carta e pulisci PIN</button>
+                </article>
+
+                <article class="atm-panel summary-panel">
+                    <div class="panel-header">
+                        <div>
+                            <p class="panel-kicker">Riepilogo</p>
+                            <h2>Movimenti recenti</h2>
+                        </div>
+                    </div>
+
+                    <div class="summary-metrics">
+                        <div>
+                            <span>Entrate totali</span>
+                            <strong id="deposit-total">€ 0,00</strong>
+                        </div>
+                        <div>
+                            <span>Uscite totali</span>
+                            <strong id="withdraw-total">€ 0,00</strong>
+                        </div>
+                        <div>
+                            <span>Ultimo esito</span>
+                            <strong id="last-status">In attesa</strong>
+                        </div>
+                    </div>
+
+                    <div class="message-box" id="message-box" aria-live="polite">Inserisci la carta per iniziare.</div>
+
+                    <ul id="transaction-list" class="transaction-list"></ul>
+                </article>
+            </section>
         </main>
-
-        <footer></footer>
     </body>
 </html>
